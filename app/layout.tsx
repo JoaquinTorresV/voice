@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "VoiceAI - Agentes de Voz con Inteligencia Artificial",
   description:
     "Agentes de voz con IA para automatizar llamadas, reducir costos y escalar tu negocio.",
+  icons: {
+    icon: "/fiveicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="icon" type="image/x-icon" href="/ico.ico" />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"

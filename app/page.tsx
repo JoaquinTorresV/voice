@@ -504,7 +504,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="flex flex-col gap-2 mt-2">
-                  <h3 className="text-lg font-bold">Salud</h3>
+                  <h3 className="text-lg font-bold">Clínicas</h3>
                   <p className="text-slate-500 dark:text-slate-400 text-sm leading-normal">
                     Recordatorios de citas y admisión de pacientes con total
                     seguridad y cumplimiento.
@@ -549,6 +549,25 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              <div className="group relative flex flex-col gap-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-6 hover:border-primary/50 transition-colors">
+                <div className="absolute right-4 top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <span className="material-symbols-outlined text-[64px] text-primary">
+                    directions_car
+                  </span>
+                </div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+                  <span className="material-symbols-outlined text-[20px]">
+                    directions_car
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 mt-2">
+                  <h3 className="text-lg font-bold">Concesionarias</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                    Gestione citas de pruebas de conducción, consultas de clientes
+                    y seguimiento de ventas.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -563,19 +582,19 @@ export default function Home() {
                 ¿Listo para transformar la experiencia de sus clientes?
               </h2>
               <p className="text-slate-400 text-lg max-w-xl">
-                Vea cómo nuestra IA se adapta a las necesidades específicas de
-                su industria con una demostración personalizada.
+                Prueba nuestro asistente de IA en tiempo real y ve cómo puede ayudar a tu negocio.
               </p>
               <div className="mt-4 flex flex-col sm:flex-row gap-4 w-full justify-center">
-                <a href="#contacto" className="flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-white transition-all hover:bg-primary/90 hover:scale-[1.02] shadow-lg shadow-primary/25">
-                  <span>Ver Demo para su Industria</span>
+                <a href="/call" className="flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-white transition-all hover:bg-primary/90 hover:scale-[1.02] shadow-lg shadow-primary/25">
+                  <span>Probar Demo General</span>
                   <span className="material-symbols-outlined text-sm">
                     arrow_forward
                   </span>
                 </a>
-                <button className="flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 backdrop-blur-sm px-8 py-4 text-base font-bold text-white transition-all hover:bg-slate-700">
-                  <span>Ver Documentación</span>
-                </button>
+                <a href="https://calendly.com/joaquintorresv2005/reunion-voiceai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 backdrop-blur-sm px-8 py-4 text-base font-bold text-white transition-all hover:bg-slate-700 hover:border-slate-600">
+                  <span className="material-symbols-outlined text-lg">calendar_month</span>
+                  <span>Agendar Reunión</span>
+                </a>
               </div>
             </div>
           </div>
@@ -585,14 +604,14 @@ export default function Home() {
       <footer className="border-t border-gray-200 pt-8 pb-12 bg-background-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © 2024 AI Voice Agent Inc. Todos los derechos reservados.
+            © 2026 AI Voice Agent Inc. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a className="text-slate-400 hover:text-primary transition-colors" href="#">
-              <span className="material-symbols-outlined">public</span>
+            <a className="text-slate-400 hover:text-primary transition-colors text-2xl" href="https://wa.me/56932115412" target="_blank" rel="noopener noreferrer">
+              📱
             </a>
             <a className="text-slate-400 hover:text-primary transition-colors" href="#">
-              <span className="material-symbols-outlined">alternate_email</span>
+              <span className="material-symbols-outlined">public</span>
             </a>
           </div>
         </div>

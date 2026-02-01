@@ -1,139 +1,193 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-declare global {
-  interface Window {
-    RetellWebClient: any;
-  }
-}
+import { useEffect, useRef } from 'react';
 
 export default function CallPage() {
-  const [status, setStatus] = useState('Inicializando...');
-  const [error, setError] = useState<string | null>(null);
-  const [callActive, setCallActive] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const initCall = async () => {
-      try {
-        console.log('🔄 Cargando SDK de Retell...');
-        setStatus('Cargando SDK...');
+    if (!containerRef.current) return;
 
-        // Cargar el SDK de Retell
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@retell-ai/web-client@2.20.0/lib/retell-web-client.js';
-        script.async = true;
+    // Limpiar contenedor primero
+    containerRef.current.innerHTML = '';
 
-        script.onload = () => {
-          console.log('✅ SDK de Retell AI cargado');
+    // Crear el elemento del widget
+    const widget = document.createElement('elevenlabs-convai');
+    widget.setAttribute(
+      'agent-id',
+      process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || 'agent_5901kgbn44kve6ha1pzc47gsd5tv'
+    );
+    
+    // Estilos inline para que se vea correctamente - NO fijar altura
+    widget.style.width = '100%';
+    widget.style.minHeight = '450px';
+    widget.style.borderRadius = '1rem';
+    widget.style.display = 'flex';
+    widget.style.alignItems = 'center';
+    widget.style.justifyContent = 'center';
 
-          if (!window.RetellWebClient) {
-            throw new Error('RetellWebClient no está disponible');
-          }
+    containerRef.current.appendChild(widget);
 
-          // Crear cliente
-          const client = new window.RetellWebClient();
-          console.log('✅ Cliente de Retell inicializado');
+    // Cargar el script del widget
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+    script.async = true;
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
 
-          setStatus('Conectando...');
-
-          // Conectar con el agente
-          client.startCall({
-            agentId: process.env.NEXT_PUBLIC_RETELL_AGENT_ID || 'agent_ff7f492a5acf0f3ead7f31af2f',
-            onCallStart: () => {
-              console.log('📞 Llamada iniciada');
-              setStatus('Llamada en progreso...');
-              setCallActive(true);
-            },
-            onCallEnd: () => {
-              console.log('📞 Llamada finalizada');
-              setStatus('Llamada finalizada');
-              setCallActive(false);
-              setTimeout(() => {
-                window.location.href = '/';
-              }, 2000);
-            },
-            onError: (error: any) => {
-              console.error('❌ Error en la llamada:', error);
-              setError(`Error: ${error?.message || JSON.stringify(error)}`);
-              setStatus('Error');
-            },
-          });
-        };
-
-        script.onerror = () => {
-          console.error('❌ Error al cargar el SDK');
-          setError('No se pudo cargar el SDK de Retell AI');
-          setStatus('Error de conexión');
-        };
-
-        document.body.appendChild(script);
-
-        return () => {
-          if (document.body.contains(script)) {
-            document.body.removeChild(script);
-          }
-        };
-      } catch (err: any) {
-        console.error('❌ Error:', err);
-        setError(err?.message || 'Error desconocido');
-        setStatus('Error');
+    return () => {
+      if (containerRef.current && containerRef.current.contains(widget)) {
+        try {
+          containerRef.current.removeChild(widget);
+        } catch (e) {
+          // Ignorar si ya fue removido
+        }
       }
     };
-
-    initCall();
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-[#0b1016] flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-2xl shadow-gray-200/50 border border-gray-100 dark:border-white/10">
-          <div className="flex flex-col items-center gap-6">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                Demo de Voz
-              </h1>
-              <p className="text-slate-600 dark:text-gray-400">
-                Hablá con nuestro agente de ventas
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-[#0b1016] flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      {/* Efectos de fondo */}
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-80 h-80 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div className="relative z-10 w-full max-w-5xl">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-500/50 mb-6 backdrop-blur-sm">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            <span className="text-sm font-bold text-green-400 tracking-wide uppercase">
+              Agente en Línea
+            </span>
+          </div>
+
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-4 leading-tight">
+            Conversá con IA <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">en Vivo</span>
+          </h1>
+
+          <p className="text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+            Experiencia una conversación interactiva con nuestro agente de IA. Presioná el micrófono para empezar a hablar.
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+          {/* Left Info Panel */}
+          <div className="lg:col-span-1 flex flex-col gap-4">
+            <div className="bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 rounded-2xl p-6 backdrop-blur-sm">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary">info</span>
+                ¿Cómo usar?
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3 text-sm">
+                  <span className="material-symbols-outlined text-green-400 flex-shrink-0 text-lg">mic</span>
+                  <span className="text-slate-200">Activa micrófono</span>
+                </li>
+                <li className="flex gap-3 text-sm">
+                  <span className="material-symbols-outlined text-blue-400 flex-shrink-0 text-lg">chat</span>
+                  <span className="text-slate-200">Habla naturalmente</span>
+                </li>
+                <li className="flex gap-3 text-sm">
+                  <span className="material-symbols-outlined text-purple-400 flex-shrink-0 text-lg">check_circle</span>
+                  <span className="text-slate-200">Recibe respuestas</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <p className="text-sm text-slate-300">
+                <span className="font-bold text-primary">💬</span> Este agente está entrenado para ayudarte con preguntas sobre nuestros servicios y agendar reuniones.
               </p>
             </div>
 
-            <div className="w-full h-[400px] bg-slate-50 dark:bg-[#151c24] rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center">
-              <div className="w-full h-full flex flex-col items-center justify-center gap-4 p-6">
-                {error ? (
-                  <div className="text-center">
-                    <div className="text-5xl mb-4">⚠️</div>
-                    <p className="text-red-600 font-semibold mb-2">{error}</p>
-                    <p className="text-slate-500 text-xs">
-                      Abrí la consola (F12) para más detalles
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+              <p className="text-xs text-slate-400 flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-primary">schedule</span>
+                Disponible 24/7
+              </p>
+            </div>
+          </div>
+
+          {/* Agent Widget - Main Focus */}
+          <div className="lg:col-span-3">
+            <div className="relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-blue-500 rounded-3xl blur opacity-20 group-hover:opacity-100 transition duration-1000"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-slate-700 overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-500 to-purple-500"></div>
+                
+                <div className="p-6 min-h-[600px] flex flex-col items-center justify-center relative">
+                  {/* Widget Label */}
+                  <div className="absolute top-4 left-4 bg-primary/30 border border-primary/50 rounded-lg px-3 py-1 backdrop-blur-sm z-30">
+                    <p className="text-xs font-semibold text-primary uppercase tracking-wide">
+                      🎤 Zona Interactiva
                     </p>
                   </div>
-                ) : (
-                  <div className="text-center w-full">
-                    <div className={`flex justify-center mb-4 ${callActive ? 'animate-pulse' : ''}`}>
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-blue-400 flex items-center justify-center shadow-lg shadow-primary/50">
-                        <span className="material-symbols-outlined text-white text-4xl">
-                          {callActive ? 'call' : 'phone_in_talk'}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-slate-900 dark:text-white font-semibold text-lg mb-1">
-                      {status}
-                    </p>
-                    <p className="text-slate-500 dark:text-gray-400 text-xs">
-                      {callActive ? '🎤 Micrófono activo' : 'Conectando...'}
-                    </p>
-                  </div>
-                )}
+
+                  {/* The Widget Container */}
+                  <div
+                    ref={containerRef}
+                    className="w-full flex items-center justify-center"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      position: 'relative',
+                      width: '100%',
+                      minHeight: '480px',
+                      overflow: 'visible',
+                      zIndex: 10,
+                    }}
+                  ></div>
+                </div>
+
+                {/* Bottom Accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
               </div>
             </div>
 
-            <button
-              onClick={() => window.location.href = '/'}
-              className="w-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold py-3 rounded-lg transition-all"
-            >
-              Volver
-            </button>
+            {/* Scheduling Section */}
+            <div className="mt-6 bg-gradient-to-br from-green-500/20 to-emerald-500/10 border border-green-500/30 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-green-400">calendar_month</span>
+                    ¿Te interesa una demo personalizada?
+                  </h3>
+                  <p className="text-sm text-slate-300">
+                    Agenda una reunión con nuestro equipo para conocer cómo VoiceAI puede transformar tu negocio.
+                  </p>
+                </div>
+                <a
+                  href="https://calendly.com/joaquintorresv2005/reunion-voiceai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg shadow-green-500/20 flex-shrink-0 whitespace-nowrap"
+                >
+                  <span className="material-symbols-outlined">calendar_month</span>
+                  Agendar Ahora
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+          <button
+            onClick={() => window.location.href = '/'}
+            className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg border border-slate-600 hover:border-slate-500"
+          >
+            <span className="material-symbols-outlined text-lg">arrow_back</span>
+            Volver al Inicio
+          </button>
+
+          <div className="text-center text-slate-400 text-sm">
+            <p>¿Preguntas? <a href="https://wa.me/56932115412" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">📱 Contactanos por WhatsApp</a></p>
           </div>
         </div>
       </div>

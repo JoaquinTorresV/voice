@@ -101,3 +101,13 @@ html {
     height: 100%;
   }
 }
+
+/* ElevenLabs Widget Styling */
+elevenlabs-convai {
+  position: relative !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  --els-widget-position: relative !important;
+}
