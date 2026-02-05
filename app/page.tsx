@@ -36,6 +36,12 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-4">
               <a
+                href="/call"
+                className="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10 dark:text-white text-sm font-semibold transition-all"
+              >
+                <span className="truncate">Probar AIVoice</span>
+              </a>
+              <a
                 href="#contacto"
                 className="flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary-dark transition-all text-white text-sm font-bold shadow-lg shadow-primary/20"
               >
@@ -79,7 +85,7 @@ export default function Home() {
                       href="#contacto"
                       className="flex h-12 items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-dark text-white px-8 text-base font-bold transition-all shadow-xl shadow-primary/25"
                     >
-                      <span>Solicitar Demo</span>
+                      <span>Solicitar Reunión</span>
                       <span className="material-symbols-outlined text-lg">
                         arrow_forward
                       </span>
@@ -88,7 +94,7 @@ export default function Home() {
                       <span className="material-symbols-outlined text-primary text-lg">
                         play_circle
                       </span>
-                      <span>Escuchar Muestras</span>
+                      <span>Probar Demo</span>
                     </a>
                   </div>
                   <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 text-slate-500 dark:text-gray-500 text-sm">
@@ -96,13 +102,13 @@ export default function Home() {
                       <span className="material-symbols-outlined text-lg">
                         check_circle
                       </span>
-                      <span>Sin tarjeta de crédito</span>
+                      <span>Reduce costos operativos</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="material-symbols-outlined text-lg">
                         check_circle
                       </span>
-                      <span>Setup en 5 minutos</span>
+                      <span>Implementación rápida</span>
                     </div>
                   </div>
                 </div>
@@ -183,24 +189,16 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 dark:opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined">diamond</span>
-                  AcmeCorp
+                  <span className="material-symbols-outlined">business</span>
+                  Cinco Horizontes
                 </h3>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined">rocket_launch</span>
-                  Stratos
+                  <span className="material-symbols-outlined">gavel</span>
+                  Giovani Remates
                 </h3>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined">bolt</span>
-                  EnergyX
-                </h3>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined">public</span>
-                  GlobalNet
-                </h3>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined">savings</span>
-                  FinTech
+                  <span className="material-symbols-outlined">psychology</span>
+                  Cognitiva
                 </h3>
               </div>
             </div>
