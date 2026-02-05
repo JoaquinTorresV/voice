@@ -15,9 +15,9 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "VoiceAI - Agentes de Voz con Inteligencia Artificial",
+  title: "JQSystems - Agentes de Voz y Chat con IA",
   description:
-    "Agentes de voz con IA para automatizar llamadas, reducir costos y escalar tu negocio.",
+    "Agentes de voz y chat con IA para automatizar conversaciones, reducir costos y escalar tu negocio.",
   icons: {
     icon: "/fiveicon.png",
   },

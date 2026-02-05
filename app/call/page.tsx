@@ -101,7 +101,7 @@ export default function CallPage() {
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
               <p className="text-sm text-slate-300">
-                <span className="font-bold text-primary">💬</span> Este agente está entrenado para ayudarte con preguntas sobre nuestros servicios y agendar reuniones.
+                <span className="font-bold text-primary">💬</span> Este agente está entrenado para ayudarte con preguntas sobre JQSystems y agendar reuniones.
               </p>
             </div>
 
@@ -159,7 +159,7 @@ export default function CallPage() {
                     ¿Te interesa una demo personalizada?
                   </h3>
                   <p className="text-sm text-slate-300">
-                    Agenda una reunión con nuestro equipo para conocer cómo VoiceAI puede transformar tu negocio.
+                    Agenda una reunión con nuestro equipo para conocer cómo JQSystems puede transformar tu negocio.
                   </p>
                 </div>
                 <a

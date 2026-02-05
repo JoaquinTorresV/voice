@@ -11,7 +11,7 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">
-                VoiceAI
+                JQSystems
               </h2>
             </div>
             <div className="hidden md:flex flex-1 justify-center gap-8">
@@ -26,6 +26,12 @@ export default function Home() {
                 href="#servicios"
               >
                 Servicios
+              </a>
+              <a
+                className="text-slate-600 hover:text-primary dark:text-gray-300 dark:hover:text-white text-sm font-medium transition-colors"
+                href="#chatbots"
+              >
+                Chatbots
               </a>
               <a
                 className="text-slate-600 hover:text-primary dark:text-gray-300 dark:hover:text-white text-sm font-medium transition-colors"
@@ -70,13 +76,13 @@ export default function Home() {
                     </span>
                   </div>
                   <h1 className="text-slate-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-                    Agentes de Voz con <br className="hidden lg:block" />
+                    Agentes de Voz y Chat <br className="hidden lg:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
                       Inteligencia Artificial
                     </span>
                   </h1>
                   <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                    Automatiza tus llamadas entrantes y salientes 24/7 con una
+                    Automatiza conversaciones por voz y chat 24/7 con una
                     calidad humana indistinguible. Reduce costos operativos
                     hasta un 60% y escala tu negocio sin límites de personal.
                   </p>
@@ -133,7 +139,7 @@ export default function Home() {
                           <img
                             alt="Retrato de un avatar de agente IA con aspecto profesional"
                             className="w-full h-full rounded-full object-cover opacity-90 dark:opacity-80 dark:grayscale"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3G8kBHgT0YIZT8PnPL8rElX0dhTQUJNGBrKq02x9a-TekqZE5-RgOgHQ4el47apALc6c1BjYjJ9GcBbe_uMdsELdYP93ogOBumaaMUPuNhu_OQcL57pB7IJEXWZs93qSxO7M0TxYngA-_fE8Z4BH0s3kz2RpFMHiFPRP_kUPNmgXiXmAeOjc9nIjYIvATbRVSPdUbsJFSivBOVR6HzFT0cXn2Mp9zjIvhix3PFoLOJDPvISaNWhdWHtkU3r36TN5ecejqkggRvCvv"
+                            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80"
                           />
                         </div>
                         <div className="absolute bottom-0 right-0 h-8 w-8 bg-primary rounded-full flex items-center justify-center border-4 border-white dark:border-surface-dark z-20">
@@ -304,6 +310,70 @@ export default function Home() {
           </div>
         </div>
 
+        <section className="w-full py-20 bg-white dark:bg-surface-dark/60 transition-colors duration-300" id="chatbots">
+          <div className="layout-container flex justify-center px-6 lg:px-20">
+            <div className="layout-content-container flex flex-col max-w-[1280px] w-full">
+              <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-12">
+                <div className="max-w-2xl">
+                  <h2 className="text-slate-900 dark:text-white text-3xl font-bold tracking-tight mb-3">
+                    Agentes de Chatbot que convierten
+                  </h2>
+                  <p className="text-slate-600 dark:text-gray-400">
+                    Crea experiencias conversacionales por WhatsApp, web y redes
+                    sociales con respuestas precisas, contexto y personalidad
+                    de marca.
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-gray-400">
+                  <span className="material-symbols-outlined text-primary">
+                    hub
+                  </span>
+                  Integraciones listas en días, no semanas.
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6 shadow-lg shadow-slate-200/40 dark:shadow-none">
+                  <div className="size-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center mb-4">
+                    <span className="material-symbols-outlined">support</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    Soporte omnicanal
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-gray-400">
+                    Resuelve preguntas frecuentes, crea tickets y escala a un
+                    humano cuando lo necesitas.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6 shadow-lg shadow-slate-200/40 dark:shadow-none">
+                  <div className="size-12 rounded-xl bg-emerald-500/15 text-emerald-500 flex items-center justify-center mb-4">
+                    <span className="material-symbols-outlined">shopping_cart</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    Ventas por chat
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-gray-400">
+                    Recomienda productos, responde objeciones y genera ventas
+                    en el mismo flujo de conversación.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6 shadow-lg shadow-slate-200/40 dark:shadow-none">
+                  <div className="size-12 rounded-xl bg-purple-500/15 text-purple-500 flex items-center justify-center mb-4">
+                    <span className="material-symbols-outlined">school</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    Onboarding guiado
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-gray-400">
+                    Acompaña a nuevos usuarios con flujos interactivos y
+                    seguimiento automático en tiempo real.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-background-light" id="beneficios">
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col gap-24">
             <section className="flex flex-col gap-12">
@@ -404,54 +474,83 @@ export default function Home() {
             <div className="flex flex-col gap-4 border-l-2 border-primary pl-6">
               <h2 className="text-3xl font-bold tracking-tight">Cómo Funciona</h2>
               <p className="text-slate-500 dark:text-slate-400 text-base max-w-xl">
-                Nuestro proceso fluido pone en marcha su agente de IA en
-                minutos, no en meses.
+                Un proceso claro de instalación para que tu agente esté activo
+                rápido y sin fricciones.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-8 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-7 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-symbols-outlined text-[28px]">
-                    link
+                    search
                   </span>
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="text-sm font-mono text-slate-400 mb-1">01</div>
-                  <h3 className="text-xl font-bold leading-tight">Integrar</h3>
+                  <h3 className="text-xl font-bold leading-tight">Analizar</h3>
                   <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                    Sincronice con su CRM sin problemas. Soportamos Salesforce,
-                    HubSpot y APIs personalizadas desde el primer momento.
+                    Revisamos tu negocio, canales y volumen para definir el
+                    alcance ideal del agente.
                   </p>
                 </div>
               </div>
-              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-8 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-7 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  <span className="material-symbols-outlined text-[28px]">
+                    checklist
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-mono text-slate-400 mb-1">02</div>
+                  <h3 className="text-xl font-bold leading-tight">Necesidades</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                    Levantamos flujos, datos y reglas para cubrir casos reales
+                    desde el primer día.
+                  </p>
+                </div>
+              </div>
+              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-7 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  <span className="material-symbols-outlined text-[28px]">
+                    settings
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-mono text-slate-400 mb-1">03</div>
+                  <h3 className="text-xl font-bold leading-tight">Instalar</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                    Integramos sistemas, APIs y canales de voz o chat en tu
+                    entorno.
+                  </p>
+                </div>
+              </div>
+              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-7 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-symbols-outlined text-[28px]">
                     tune
                   </span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <div className="text-sm font-mono text-slate-400 mb-1">02</div>
-                  <h3 className="text-xl font-bold leading-tight">Personalizar</h3>
+                  <div className="text-sm font-mono text-slate-400 mb-1">04</div>
+                  <h3 className="text-xl font-bold leading-tight">Configurar</h3>
                   <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                    Defina tonos de voz distintos, lógica de guiones y rasgos
-                    de personalidad para coincidir con la identidad de su
-                    marca.
+                    Ajustamos respuestas, tono y automatizaciones con tus
+                    objetivos de negocio.
                   </p>
                 </div>
               </div>
-              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-8 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+              <div className="group flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-7 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-symbols-outlined text-[28px]">
                     rocket_launch
                   </span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <div className="text-sm font-mono text-slate-400 mb-1">03</div>
-                  <h3 className="text-xl font-bold leading-tight">Lanzar</h3>
+                  <div className="text-sm font-mono text-slate-400 mb-1">05</div>
+                  <h3 className="text-xl font-bold leading-tight">Probar y lanzar</h3>
                   <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                    Despliegue para manejo automatizado 24/7. Monitoree el
-                    rendimiento con análisis en tiempo real.
+                    Ejecutamos pruebas, afinamos detalles y salimos a producción
+                    con monitoreo continuo.
                   </p>
                 </div>
               </div>
@@ -566,6 +665,63 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              <div className="group relative flex flex-col gap-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-6 hover:border-primary/50 transition-colors">
+                <div className="absolute right-4 top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <span className="material-symbols-outlined text-[64px] text-primary">
+                    account_balance
+                  </span>
+                </div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+                  <span className="material-symbols-outlined text-[20px]">
+                    account_balance
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 mt-2">
+                  <h3 className="text-lg font-bold">Finanzas</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                    Cobranza, validación de identidad y asistencia bancaria con
+                    cumplimiento y trazabilidad.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative flex flex-col gap-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-6 hover:border-primary/50 transition-colors">
+                <div className="absolute right-4 top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <span className="material-symbols-outlined text-[64px] text-primary">
+                    school
+                  </span>
+                </div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+                  <span className="material-symbols-outlined text-[20px]">
+                    school
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 mt-2">
+                  <h3 className="text-lg font-bold">Educación</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                    Admisiones, soporte a estudiantes y recordatorios de pagos
+                    en un solo flujo conversacional.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative flex flex-col gap-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#151c24] p-6 hover:border-primary/50 transition-colors">
+                <div className="absolute right-4 top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <span className="material-symbols-outlined text-[64px] text-primary">
+                    local_shipping
+                  </span>
+                </div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+                  <span className="material-symbols-outlined text-[20px]">
+                    local_shipping
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 mt-2">
+                  <h3 className="text-lg font-bold">Logística</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                    Seguimiento de envíos, confirmaciones y soporte al cliente
+                    con actualizaciones en tiempo real.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -602,7 +758,7 @@ export default function Home() {
       <footer className="border-t border-gray-200 pt-8 pb-12 bg-background-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © 2026 AI Voice Agent Inc. Todos los derechos reservados.
+            © 2026 JQSystems. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
             <a className="text-slate-400 hover:text-primary transition-colors text-2xl" href="https://wa.me/56932115412" target="_blank" rel="noopener noreferrer">
