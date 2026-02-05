@@ -3,14 +3,14 @@ export default function Home() {
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root">
       <div className="w-full z-50 border-b border-slate-200 dark:border-white/10 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md fixed top-0 left-0 transition-colors duration-300">
         <div className="layout-container flex justify-center w-full">
-          <div className="flex max-w-[1280px] w-full items-center justify-between px-6 py-4 lg:px-10">
+          <div className="flex max-w-[1280px] w-full items-center justify-between gap-2 px-4 py-3 sm:gap-3 sm:px-6 sm:py-4 lg:px-10">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
                 <span className="material-symbols-outlined text-2xl">
                   graphic_eq
                 </span>
               </div>
-              <h2 className="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">
+              <h2 className="hidden sm:block text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">
                 JQSystems
               </h2>
             </div>
@@ -40,16 +40,16 @@ export default function Home() {
                 Beneficios
               </a>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-end gap-2 sm:gap-3">
               <a
                 href="/call"
-                className="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10 dark:text-white text-sm font-semibold transition-all"
+                className="flex items-center justify-center overflow-hidden rounded-lg h-8 px-3 border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10 dark:text-white text-[11px] font-semibold transition-all sm:h-10 sm:px-4 sm:text-sm"
               >
                 <span className="truncate">Probar AIVoice</span>
               </a>
               <a
                 href="#contacto"
-                className="flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary-dark transition-all text-white text-sm font-bold shadow-lg shadow-primary/20"
+                className="flex items-center justify-center overflow-hidden rounded-lg h-8 px-3 bg-primary hover:bg-primary-dark transition-all text-white text-[11px] font-bold shadow-lg shadow-primary/20 sm:h-10 sm:px-6 sm:text-sm"
               >
                 <span className="truncate">Contacto</span>
               </a>
